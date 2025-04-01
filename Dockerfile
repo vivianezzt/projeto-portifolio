@@ -10,6 +10,9 @@
     COPY backend/package*.json ./
     RUN npm ci
     
+    # Limpa o cache do npm
+    RUN npm cache clean --force
+    
     # Agora copia o restante dos arquivos do backend
     COPY --chown=node:node backend/ ./
     
@@ -32,4 +35,3 @@
     COPY --from=builder --chown=node:node /home/node/backend/dist/ ./dist/
     
     CMD ["node", "dist/src/main.js"]
-    
