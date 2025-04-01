@@ -10,4 +10,4 @@ GET http://localhost:3000/technologies/emphasis
 GET http://localhost:3000/projects
 
 ###
-GET http://localhost:3000/projects/4
+GET http://localhost:3000/projects/2
